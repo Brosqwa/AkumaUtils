@@ -1,8 +1,8 @@
 try {
 
 const features = [
-	"rpgDisplay"
-]
+	"rpg_ammo_display"
+];
 
 require("./core/loader.js")(features);
 

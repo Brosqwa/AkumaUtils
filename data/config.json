@@ -1,13 +1,17 @@
 {
-    "test": {
-        "x": 0,
-        "y": 0,
-        "toggle": true
-    },
     "rpg_ammo_display": {
         "x": 490,
         "y": 247,
-        "toggle": true
+        "enabled": true
+    },
+    "next_mine_upgrade_display": {
+        "x": 850,
+        "y": 145,
+        "enabled": true
+    },
+    "pickaxe_xp_display": {
+        "x": 415,
+        "y": 419,
+        "enabled": true
     }
 }
-

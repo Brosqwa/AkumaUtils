@@ -1,11 +1,13 @@
-try {
 
 const features = [
-	"rpg_ammo_display"
+	"rpg_ammo_display",
+	"next_mine_upgrade_display",
+	"pickaxe_xp_display"
 ];
 
-require("./core/loader.js")(features);
-
+try {
+	require("./core/loader.js")(features);
 } catch(err) {
 	ChatLib.chat(err);
 }
+

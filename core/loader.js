@@ -8,10 +8,6 @@ module.exports = (features) => {
 
 		data.forEach(trigger => {
 
-			ChatLib.chat(
-				JSON.stringify(trigger, true, 4)
-			)
-
 			switch(trigger.type) {
 				case "none":
 					register(trigger.trigger, (event) => {
@@ -36,12 +32,21 @@ module.exports = (features) => {
 					let display = new Display()
 						.setRenderLoc(x, y)
 
+					if(trigger.display?.bg_type)
+						display.setBackground(trigger.display?.bg_type);
+					if(trigger.display?.bg_color)
+						display.setBackgroundColor(trigger.display?.bg_color);
+					
+					
+
+
 					register("tick", () => {
 						config = new Data("data/config.json");
 						if(!config[config_key].enabled)
-							return display.clearLines();
+							return display.setShouldRender(false);
 						let x = config[config_key].x || 0;
 						let y = config[config_key].y || 0;
+						display.setShouldRender(true);
 
 						let lines = trigger.func();
 						for(let l = 0; l < lines.length; l++) {

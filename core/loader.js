@@ -26,7 +26,7 @@ module.exports = (features) => {
 							config[config_key] = {
 								x: 0,
 								y: 0,
-								toggle: true
+								enabled: true
 							};
 					}
 
@@ -38,7 +38,7 @@ module.exports = (features) => {
 
 					register("tick", () => {
 						config = new Data("data/config.json");
-						if(!config[config_key].toggle)
+						if(!config[config_key].enabled)
 							return display.clearLines();
 						let x = config[config_key].x || 0;
 						let y = config[config_key].y || 0;

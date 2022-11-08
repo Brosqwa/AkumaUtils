@@ -4,7 +4,7 @@
         "y": 0,
         "toggle": true
     },
-    "rpg_display": {
+    "rpg_ammo_display": {
         "x": 490,
         "y": 247,
         "toggle": true

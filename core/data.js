@@ -1,6 +1,6 @@
 class Data {
 	constructor(path) {
-		this.path = `./config/ChatTriggers/modules/Project/${path}`;
+		this.path = `./config/ChatTriggers/modules/AkumaUtils/${path}`;
 		this.object = JSON.parse(
 			FileLib.read(this.path)
 		);

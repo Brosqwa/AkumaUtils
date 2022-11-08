@@ -3,10 +3,6 @@ let config = new Data("data/config.json");
 
 module.exports = (features) => {
 
-				ChatLib.chat(
-					JSON.stringify(config, true, 4)
-				)
-
 	features.forEach(feature => {
 		let data = require(`../features/${feature}`);
 
@@ -52,7 +48,6 @@ module.exports = (features) => {
 							display.setLine(l, lines[l]);
 						}
 					})
-
 					break;
 			}
 

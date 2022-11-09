@@ -7,7 +7,7 @@ function bar(maxval, val, c1 = "§a", c2 = "§f") {
 	return ret;
 }
 
-function numberWithCommands(x) {
+function numberWithCommas(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
@@ -71,7 +71,7 @@ function darkerColor(c) {
 module.exports = {
 	bar: bar,
 	avg: avg,
-	numberWithCommands: numberWithCommands,
+	numberWithCommas,
 	formatTime: formatTime,
 	getSlotCoords: getSlotCoords,
 	darkerColor

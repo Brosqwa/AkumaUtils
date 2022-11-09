@@ -1,13 +1,13 @@
-const utils = require("../utils/utils");
+const utils = require("../utils/utils.js");
 
 function update() {
 	let lore = Player.getInventory().getStackInSlot(0).getNBT().toObject().tag.display.Lore;
 
-	for(var x = 0; x < lore.length; x++) {
-		let uncol = ChatLib.removeFormatting(lore[x]);
+	let level;
+	let xp;
 
-		var level;
-		var xp;
+	for(let x = 0; x < lore.length; x++) {
+		let uncol = ChatLib.removeFormatting(lore[x]);
 
 		if(uncol.startsWith("❙ Level: ")) level = parseInt(uncol.replace("❙ Level: ", ""));
 		if(uncol.startsWith("❙ XP: ")) xp = parseFloat(uncol.replace(/. XP: .:{20}. .(\d+).(\d+).+/, "$1.$2"));

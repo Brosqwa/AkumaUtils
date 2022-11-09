@@ -7,7 +7,7 @@ function bar(maxval, val, c1 = "§a", c2 = "§f") {
 	return ret;
 }
 
-function numberWithCommands(x) {
+function numberWithCommas(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
@@ -43,14 +43,6 @@ function formatTime(ms) {
 	return r;
 }
 
-function getSlotCoords(slot) {
-    const x = slot % 9;
-    const y = Math.floor(slot / 9);
-    const renderX = Renderer.screen.getWidth() / 2 + ((x - 4) * 18);
-    const renderY = (Renderer.screen.getHeight() + 10) / 2 + ((y - Player.getOpenedInventory().getSize() / 18) * 18);
-    return [renderX, renderY];
-}
-
 function darkerColor(c) {
 	let l = {
 		a: "2",
@@ -69,10 +61,9 @@ function darkerColor(c) {
 }
 
 module.exports = {
-	bar: bar,
-	avg: avg,
-	numberWithCommands: numberWithCommands,
-	formatTime: formatTime,
-	getSlotCoords: getSlotCoords,
+	bar,
+	avg,
+	numberWithCommas,
+	formatTime,
 	darkerColor
 }

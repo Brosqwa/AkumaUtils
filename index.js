@@ -1,8 +1,8 @@
-
 const features = [
 	"rpg_ammo_display",
 	"next_mine_upgrade_display",
-	"pickaxe_xp_display"
+	"pickaxe_xp_display",
+	"lucky_tracker"
 ];
 
 try {

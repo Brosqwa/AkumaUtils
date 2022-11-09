@@ -11,7 +11,12 @@
     },
     "pickaxe_xp_display": {
         "x": 415,
-        "y": 419,
+        "y": 420,
+        "enabled": true
+    },
+    "lucky_tracker": {
+        "x": 10,
+        "y": 10,
         "enabled": true
     }
 }

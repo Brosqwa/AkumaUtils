@@ -18,5 +18,10 @@
         "x": 10,
         "y": 10,
         "enabled": true
+    },
+    "player_miner_display": {
+        "x": 10,
+        "y": 115,
+        "enabled": true
     }
 }

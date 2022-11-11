@@ -60,10 +60,23 @@ function darkerColor(c) {
 	return "§0"; 
 }
 
+function centerHeader(header, c) {
+	let len = 0;
+	c.forEach(l => {
+		l = ChatLib.removeFormatting(l);
+		let wid = l.length;
+
+		if(wid > len)
+			len = wid;
+	})
+	let e = " ".repeat(Math.floor(len) / 2);
+	return `${e}${header}${e}`;
+}
 module.exports = {
 	bar,
 	avg,
 	numberWithCommas,
 	formatTime,
-	darkerColor
+	darkerColor,
+	centerHeader
 }

@@ -51,6 +51,7 @@ module.exports = (features) => {
 						let y = config[config_key].y || 0;
 						display.setShouldRender(true);
 						display.setRenderLoc(x, y);
+						display.clearLines()
 
 						let lines = trigger.func();
 						for(let l = 0; l < lines.length; l++) {

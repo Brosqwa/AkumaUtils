@@ -23,5 +23,8 @@
         "x": 10,
         "y": 115,
         "enabled": true
+    },
+    "key_amount_display": {
+        "enabled": true
     }
 }

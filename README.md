@@ -9,7 +9,7 @@ who knows, maybe I will do that one day
 <br>
 2. Launch minecraft (1.8.9 forge)
 <br>
-### After your game is launched
+**After your game is launched**
 <br>
 3. Go to your .minecraft directory (%appdata%/Roaming/.minecraft) and then head to `config/ChatTriggers/modules`
 <br>

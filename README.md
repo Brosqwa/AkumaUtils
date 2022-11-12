@@ -1,7 +1,7 @@
 # AkumaUtils
-A ChatTriggers module that provides some random utilities for the AkumaMC minecraft server
-it's a chattriggers module, idk why I put it on github and not made it downloadable on the website
-who knows, maybe I will do that one day
+A ChatTriggers module that provides some random utilities for the AkumaMC minecraft server<br>
+it's a chattriggers module, idk why I put it on github and not made it downloadable on the website<br>
+who knows, maybe I will do that one day<br>
 
 ## How to install
 1. Install the ChatTriggers mod from https://www.chattriggers.com/ and put it into your mods folder<br>

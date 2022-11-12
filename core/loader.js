@@ -1,23 +1,28 @@
 const { Data } = require("./data.js");
 let config = new Data("data/config.json").get();
 
-module.exports = (features) => {
+function onAkuma() {
+	let lastln = ChatLib.removeFormatting(Scoreboard.getLines(true)[0]);
+	let firstln = ChatLib.removeFormatting(Scoreboard.getTitle());
+	return !!lastln.match(/store\.(.+)\.net/) && !!firstln.match(/AkumaMC/);
+}
 
-	ChatLib.chat(features.join(", "))
+module.exports = (features) => {
 
 	features.forEach(feature => {
 		let data = require(`../features/${feature}`);
 
-		ChatLib.chat(feature);
-
 		data.forEach(trigger => {
-
-			ChatLib.chat(JSON.stringify(trigger))
 
 			switch(trigger.type) {
 				case "none":
 					register(trigger.trigger, (event) => {
-						trigger.func(event);
+						if(!onAkuma()) return;
+						try {
+							trigger.func(event);
+						} catch(err) {
+							ChatLib.chat(err);
+						}
 					})
 					break;
 				case "display":
@@ -44,6 +49,7 @@ module.exports = (features) => {
 						display.setBackgroundColor(trigger.display?.bg_color);
 
 					register("tick", () => {
+						if(!onAkuma()) return display.setShouldRender(false);
 						config = new Data("data/config.json").get();
 						if(!config[config_key].enabled)
 							return display.setShouldRender(false);
@@ -61,7 +67,6 @@ module.exports = (features) => {
 					break;
 					
 			}
-
 		})
 
 	})

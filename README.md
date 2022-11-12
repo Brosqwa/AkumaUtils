@@ -1,6 +1,6 @@
 # AkumaUtils
 it's a chattriggers module, idk why I put it on github and not made it downloadable on the website
-who knows, maybe I will someday. I'm writing this on midnight, anyway
+who knows, maybe I will do that one day. I'm writing this at midnight, anyway
 
 ## How to install
 1.

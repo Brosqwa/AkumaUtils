@@ -9,7 +9,8 @@ who knows, maybe I will do that one day
 <br>
 2. Launch minecraft (1.8.9 forge)
 <br>
-**After your game is launched**
+### After your game is launched
+<br>
 3. Go to your .minecraft directory (%appdata%/Roaming/.minecraft) and then head to `config/ChatTriggers/modules`
 <br>
 4. Get the latest version of AkumaUtils and extract it into the directory
@@ -20,8 +21,12 @@ who knows, maybe I will do that one day
 
 ## How to configure
 there isn't a config yet, you have to edit the config file :D
-in `%appdata%/Roaming/.minecraft/config/ChatTriggers/modules/AkumaUtils/data` open the `config.json`
-edit the values however you want
-some things that you should know:
-`enabled` can only be `true` or `false` otherwise it will probably break
-`x` and `y` can only be numbers otherwise it will break
+<br>
+in `%appdata%/Roaming/.minecraft/config/ChatTriggers/modules/AkumaUtils/data` open the `config.json` file<br>
+edit the values however you want<br>
+some things that you should know:<br>
+`enabled` can only be `true` or `false` otherwise it will probably break<br>
+`x` and `y` can only be numbers otherwise it will break<br>
+X: 0 and Y:0 is the top left corner of the screen<br>
+Increasing `x` moves it to the right<br>
+Increasing `y` moves it down

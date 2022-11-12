@@ -1,6 +1,6 @@
 {
   "name": "AkumaUtils",
   "creator": "Brosqa",
-  "description": "basically, it does stuff",
+  "description": "A module that provides some utilities for the AkumaMC Minecraft server",
   "entry": "index.js"
 }

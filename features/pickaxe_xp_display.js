@@ -22,8 +22,6 @@ module.exports = [
 	{
 		type: "display",
 		func: update,
-		display: {
-			config_key: "pickaxe_xp_display"
-		}
+		display: {}
 	}
 ]

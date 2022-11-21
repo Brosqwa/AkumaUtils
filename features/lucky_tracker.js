@@ -76,7 +76,6 @@ module.exports = [
 		type: "display",
 		func: updateDisplay,
 		display: {
-			config_key: "lucky_tracker",
 			bg_type: "full"
 		}
 	}

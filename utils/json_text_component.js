@@ -12,6 +12,7 @@ class TextComponentJSON {
 
 		if(t.command) com.setClick("run_command", t.command);
 		if(t.hover) com.setHoverValue(t.hover);
+		if(t.scmd) com.setClick("suggest_command", t.scmd)
 
 		return com;
 	}
@@ -39,7 +40,6 @@ class TextComponentJSON {
 		let x;
 		for(x = 0; x < this.data.length; x++) {
 			let v = this.parseSingleObj(this.data[x]);
-			if(v.getText() == "") { msg.addTextComponent(this.parseSingleObj("\n\n")); continue; }
 			msg.addTextComponent(this.data[x + 1] ? v.setText(v.getText() + "\n") : v);
 		}
 

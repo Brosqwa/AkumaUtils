@@ -13,7 +13,6 @@ module.exports = (features) => {
 		let data = require(`../features/${feature}`);
 
 		data.forEach(trigger => {
-
 			switch(trigger.type) {
 				case "none":
 					register(trigger.trigger, (event) => {
@@ -26,16 +25,7 @@ module.exports = (features) => {
 					})
 					break;
 				case "display":
-					const config_key = trigger.display?.config_key;
-					
-					if(trigger.display?.config_key) {
-						if(!config[config_key])
-							config[config_key] = {
-								x: 0,
-								y: 0,
-								enabled: true
-							};
-					}
+					const config_key = feature;
 
 					let x = config[config_key].x || 0;
 					let y = config[config_key].y || 0;
@@ -48,22 +38,19 @@ module.exports = (features) => {
 					if(trigger.display?.bg_color)
 						display.setBackgroundColor(trigger.display?.bg_color);
 
-					register("tick", () => {
-						if(!onAkuma()) return display.setShouldRender(false);
+					register("step", () => {
+						display.clearLines();
+						if(!onAkuma() || !config[config_key].enabled) return;
+
 						config = new Data("data/config.json").get();
-						if(!config[config_key].enabled)
-							return display.setShouldRender(false);
 						let x = config[config_key].x || 0;
 						let y = config[config_key].y || 0;
-						display.setShouldRender(true);
+
 						display.setRenderLoc(x, y);
-						display.clearLines()
 
 						let lines = trigger.func();
-						for(let l = 0; l < lines.length; l++) {
-							display.setLine(l, lines[l]);
-						}
-					})
+						display.addLines(lines);
+					}).setFps(1)
 					break;
 					
 			}

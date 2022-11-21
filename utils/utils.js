@@ -19,7 +19,7 @@ function avg(arr) {
 	return sum / arr.length;
 }
 
-function formatTime(ms) {
+function formatTime(ms, fix = 1) {
 
 	let s = ms / 1000;
 
@@ -38,7 +38,7 @@ function formatTime(ms) {
 	if(d > 0) r += `${d}d `
 	if(h > 0) r += `${h}h `
 	if(min > 0) r += `${min}min `
-	r += `${s.toFixed(1)}s`
+	r += `${s.toFixed(fix)}s`
 
 	return r;
 }
@@ -50,7 +50,7 @@ function darkerColor(c) {
 		c: "4",
 		d: "5",
 		e: "6",
-		f: 7,
+		f: "7",
 		"9": "2",
 		"7": "8",
 		"6": "c"
@@ -58,6 +58,18 @@ function darkerColor(c) {
 
 	if(l[c]) return "§" + l[c];
 	return "§0"; 
+}
+function lighterColor(c, dr) {
+	let l = {
+		"1": "9",
+		"2": "a",
+		"4": "c",
+		"5": "d",
+		"8": "7"		
+	}
+
+	if(l[c]) return `§${l[c]}`;
+	return dr;
 }
 
 function centerHeader(header, c) {
@@ -78,5 +90,6 @@ module.exports = {
 	numberWithCommas,
 	formatTime,
 	darkerColor,
-	centerHeader
+	centerHeader,
+	lighterColor
 }

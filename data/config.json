@@ -26,5 +26,10 @@
     },
     "key_amount_display": {
         "enabled": true
+    },
+    "pets_display": {
+        "enabled": true,
+        "x": 120,
+        "y": 10
     }
 }

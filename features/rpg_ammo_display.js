@@ -20,8 +20,6 @@ module.exports = [
 	{
 		type: "display",
 		func: update,
-		display: {
-			config_key: "rpg_ammo_display"
-		}
+		display: {}
 	}
 ]

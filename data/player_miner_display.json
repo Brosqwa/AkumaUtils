@@ -1,5 +1,6 @@
 {
     "active": false,
+    "full_charge": false,
     "start_time": 0,
     "stop_time": 0
 }

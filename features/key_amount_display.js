@@ -4,10 +4,10 @@ const { Data } = require("../core/data.js");
 const config = new Data("data/config.json");
 
 function render(slot) {
+	if(slot.getInventory().getName() != "Keys") return;
 	if(!config.get().key_amount_display.enabled) return;
 
 	try { slot.getItem().getNBT() } catch(err) { return; }
-	if(slot.getInventory().getName() != "Keys") return;
 
 	let nbt = slot.getItem().getNBT().toObject();
 	if(nbt.tag.display) {

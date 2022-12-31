@@ -3,13 +3,13 @@ const scale = 0.85;
 const { Data } = require("../core/data.js");
 const config = new Data("data/config.json");
 
-function render(slot) {
-	if(slot.getInventory().getName() != "Keys") return;
+function render(item, _x, _y) {
+	//if(slot.getInventory().getName() != "Keys") return;
 	if(!config.get().key_amount_display.enabled) return;
 
-	try { slot.getItem().getNBT() } catch(err) { return; }
+	try { item.getNBT() } catch(err) { return; }
 
-	let nbt = slot.getItem().getNBT().toObject();
+	let nbt = item.getNBT().toObject();
 	if(nbt.tag.display) {
 		let lore = nbt.tag.display.Lore;
 		lore.forEach(ln => {
@@ -20,8 +20,8 @@ function render(slot) {
 				let xoff = Renderer.getStringWidth(mat[1]) / 2 * 0.9;
 				let xoff2 = 7.5 / scale;
 
-				let x = slot.getDisplayX() / scale;
-				let y = slot.getDisplayY() / scale;
+				let x = _x / scale;
+				let y = _y / scale;
 
 				let col = mat[1] == "0" ? "7" : nbt.tag.display.Name[1];
 
@@ -36,7 +36,7 @@ function render(slot) {
 
 module.exports = [
 	{
-		trigger: "renderSlot",
+		trigger: "renderItemIntoGui",
 		type: "none",
 		func: render
 	}

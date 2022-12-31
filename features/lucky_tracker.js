@@ -1,8 +1,41 @@
 const { Data } = require("../core/data.js")
 let data = new Data("data/lucky_tracker.json").get();
+const regexmatch = /ENCHANTS » Lucky activated and gave ([A-z0-9$ ]+)(\.)?/;
+
+/* todo
+const log = Array(7).fill("&7...");
+
+function update(event) {
+	let msg = ChatLib.getChatMessage(event);
+	if(!msg.startsWith("ENCHANTS » Lucky")) return;
+
+	let match = msg.match(regexmatch);
+	switch(match[1]) {
+		case "3 mine keys":
+			log.push("§a+§f3 §bMine Keys");
+			break;
+		case "4 token keys":
+			log.push("§a+§e4 §6Token Keys");
+			break;
+		case "2 omega keys":
+			log.push("§a+§c2 §4Omega Keys");
+			break;
+		case "$60Q":
+			log.push("§a+§a$60Q");
+			break;
+		case "1B tokens":
+			log.push("§a+§e1B Tokens");
+			break;
+	}
+	if(log.length >= 7) log.shift();
+}
+
+function updateDisplay() {
+	return ["    §9§lLucky Log    ", "", ...log.map(d => " " + d).reverse(), ""];
+}
+*/
 
 let state = -1;
-
 function update(event) {
 	let message = ChatLib.getChatMessage(event);
 
@@ -34,8 +67,6 @@ function update(event) {
 				ChatLib.chat(`§4[LuckyTrackerError] §cUnknown item '${lucky_gave}', report this!`);
 				break;
 		}
-		
-	
 }
 
 function displayProcs(n) {

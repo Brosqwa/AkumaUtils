@@ -7,6 +7,15 @@ function onAkuma() {
 	return !!lastln.match(/store\.(.+)\.net/) && !!firstln.match(/AkumaMC/);
 }
 
+function noneFn(fn) {
+	if(!onAkuma()) return;
+	try {
+		return fn;
+	} catch(err) {
+		ChatLib.chat(err);
+	}
+}
+
 module.exports = (features) => {
 
 	features.forEach(feature => {
@@ -15,14 +24,7 @@ module.exports = (features) => {
 		data.forEach(trigger => {
 			switch(trigger.type) {
 				case "none":
-					register(trigger.trigger, (event) => {
-						if(!onAkuma()) return;
-						try {
-							trigger.func(event);
-						} catch(err) {
-							ChatLib.chat(err);
-						}
-					})
+					register(trigger.trigger, noneFn(trigger.func));
 					break;
 				case "display":
 					const config_key = feature;

@@ -23,7 +23,7 @@ function update(event) {
 				Client.showTitle("§cMiner Despawned", `§7${utils.formatTime(data.stop_time, 2)}`, 0, 30, 0);
 				break;
 			case "Your player miner is now fully charged":
-				Client.showTitle(" ", "§aMiner Charged", 0, 30, 0);
+				Client.showTitle("§aMiner Charged", "", 0, 30, 0);
 				data.full_charge = true;
 				break;
 		}
